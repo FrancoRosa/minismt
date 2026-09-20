@@ -1,13 +1,37 @@
 ---
 import "@/styles/global.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "MiningSMT — Technology Adapted for Mining",
+  description = "MiningSMT adapts proven technology into rugged, field-ready systems for mining operations — from autonomous monitoring to predictive maintenance and fleet software.",
+} = Astro.props
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <title>{title}</title>
+    <script is:inline>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem("theme")
+          var systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches
+          if (stored === "dark" || (!stored && systemDark)) {
+            document.documentElement.classList.add("dark")
+          }
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <slot />

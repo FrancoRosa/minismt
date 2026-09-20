@@ -1,0 +1,29 @@
+---
+import { buttonVariants } from "@/components/ui/button"
+---
+
+<section id="contact" class="border-b border-border bg-muted/40 py-24">
+  <div class="mx-auto max-w-4xl px-6 text-center">
+    <h2 class="font-heading text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+      Ready to modernize your site?
+    </h2>
+    <p class="mx-auto mt-4 max-w-xl text-muted-foreground">
+      Talk to our team about a site assessment. We'll tell you plainly where
+      technology can move the needle — and where it can't.
+    </p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a
+        href="mailto:hello@miningsmt.com"
+        class={buttonVariants({ size: "lg" })}
+      >
+        Contact our team
+      </a>
+      <a
+        href="#process"
+        class={buttonVariants({ variant: "outline", size: "lg" })}
+      >
+        See our process
+      </a>
+    </div>
+  </div>
+</section>

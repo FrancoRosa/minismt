@@ -1,0 +1,46 @@
+---
+import { FaqAccordion } from "@/components/faq-accordion"
+
+const faqs = [
+  {
+    question: "Do we need to replace our existing equipment?",
+    answer:
+      "No. Our systems are designed as retrofits — sensor kits, gateways, and software that integrate with the trucks, conveyors, and control systems you already run.",
+  },
+  {
+    question: "How long does a typical deployment take?",
+    answer:
+      "Most sites see a working pilot on a single pit or line within 4-6 weeks, with full-site rollout phased over the following quarter depending on scope.",
+  },
+  {
+    question: "Can your systems work with low or intermittent connectivity?",
+    answer:
+      "Yes. Our edge hardware buffers and syncs data locally, so monitoring and alerting keep working even when the link back to a remote operations center drops.",
+  },
+  {
+    question: "What does ongoing support look like?",
+    answer:
+      "Every deployment includes a dedicated support team that monitors system uptime remotely and ships updates as your equipment mix or regulations change.",
+  },
+  {
+    question: "Do you handle safety and regulatory compliance requirements?",
+    answer:
+      "We build reporting and alerting to match the mining safety regulations in your jurisdiction, and work with your compliance team during rollout to validate it.",
+  },
+]
+---
+
+<section id="faq" class="border-b border-border py-24">
+  <div class="mx-auto max-w-3xl px-6">
+    <div class="text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+        Frequently asked questions
+      </h2>
+      <p class="mt-4 text-muted-foreground">
+        Everything site and operations teams ask before bringing us on.
+      </p>
+    </div>
+
+    <FaqAccordion faqs={faqs} client:load />
+  </div>
+</section>

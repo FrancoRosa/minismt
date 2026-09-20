@@ -1,17 +1,26 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import Hero from "@/components/sections/hero.astro"
+import CapabilitiesStrip from "@/components/sections/capabilities-strip.astro"
+import Features from "@/components/sections/features.astro"
+import Process from "@/components/sections/process.astro"
+import Testimonials from "@/components/sections/testimonials.astro"
+import Faq from "@/components/sections/faq.astro"
+import Cta from "@/components/sections/cta.astro"
 ---
 
 <Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
-      </div>
-    </div>
-  </div>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <CapabilitiesStrip />
+    <Features />
+    <Process />
+    <Testimonials />
+    <Faq />
+    <Cta />
+  </main>
+  <SiteFooter />
 </Layout>

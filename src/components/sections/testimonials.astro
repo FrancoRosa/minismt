@@ -1,0 +1,60 @@
+---
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Quote } from "lucide-react"
+
+const testimonials = [
+  {
+    quote:
+      "MiningSMT retrofitted our haul fleet with monitoring hardware in under six weeks. We saw a measurable drop in unplanned maintenance in the first quarter.",
+    name: "Operations Manager",
+    role: "Open-Pit Copper Operation",
+  },
+  {
+    quote:
+      "The predictive maintenance models flagged a conveyor bearing failure eleven days out. That single catch paid for the platform.",
+    name: "Maintenance Superintendent",
+    role: "Mineral Processing Plant",
+  },
+  {
+    quote:
+      "Their team understood that we couldn't stop production to install anything. The phased rollout meant zero disruption to the pit.",
+    name: "Site General Manager",
+    role: "Underground Mining Operation",
+  },
+]
+---
+
+<section id="testimonials" class="border-b border-border py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+        Trusted on active sites
+      </h2>
+      <p class="mt-4 text-muted-foreground">
+        Feedback from the operations and maintenance teams running our
+        systems day to day.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {
+        testimonials.map((t) => (
+          <Card className="justify-between">
+            <CardContent>
+              <Quote className="size-6 text-primary" strokeWidth={1.75} />
+              <p class="mt-4 text-sm leading-relaxed text-foreground">
+                "{t.quote}"
+              </p>
+            </CardContent>
+            <CardFooter className="flex-col items-start gap-0.5 border-t border-border pt-5">
+              <span class="text-sm font-semibold">{t.name}</span>
+              <span class="text-xs tracking-wide text-muted-foreground uppercase">
+                {t.role}
+              </span>
+            </CardFooter>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

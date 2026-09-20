@@ -1,0 +1,64 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Assess",
+    description:
+      "We walk the site, audit your existing fleet and control systems, and identify where technology can reduce risk or cost fastest.",
+  },
+  {
+    number: "02",
+    title: "Adapt",
+    description:
+      "Our engineers configure sensors, firmware, and software to work with the equipment you already operate — no forklift upgrades.",
+  },
+  {
+    number: "03",
+    title: "Deploy",
+    description:
+      "Phased rollout starting with a single pit, pit level, or process line, validated against your operational KPIs before scaling.",
+  },
+  {
+    number: "04",
+    title: "Support",
+    description:
+      "A dedicated team monitors uptime and iterates on the system as your operation and regulatory requirements evolve.",
+  },
+]
+---
+
+<section id="process" class="border-b border-border py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+        How we get you live
+      </h2>
+      <p class="mt-4 text-muted-foreground">
+        A four-stage process built for sites that can't afford downtime
+        during a rollout.
+      </p>
+    </div>
+
+    <div class="relative mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        class="pointer-events-none absolute top-6 right-0 left-0 hidden h-px bg-border lg:block"
+      >
+      </div>
+      {
+        steps.map((step) => (
+          <div class="relative flex flex-col gap-3">
+            <span class="font-heading text-3xl font-bold text-primary">
+              {step.number}
+            </span>
+            <h3 class="font-heading text-sm font-bold tracking-widest uppercase">
+              {step.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              {step.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

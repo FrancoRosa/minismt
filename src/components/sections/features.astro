@@ -1,0 +1,84 @@
+---
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Activity,
+  CloudCog,
+  Gauge,
+  Radio,
+  ShieldCheck,
+  Truck,
+} from "lucide-react"
+
+const solutions = [
+  {
+    icon: Radio,
+    title: "Autonomous Equipment Monitoring",
+    description:
+      "Retrofit sensor kits that turn existing haul trucks, excavators, and conveyors into connected assets — no fleet replacement required.",
+  },
+  {
+    icon: Gauge,
+    title: "Predictive Maintenance",
+    description:
+      "Vibration, temperature, and load data feed models that flag failures weeks before they happen, cutting unplanned downtime.",
+  },
+  {
+    icon: Truck,
+    title: "Fleet & Asset Management",
+    description:
+      "A single dashboard for utilization, fuel, and maintenance across every vehicle and fixed asset on site.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Safety & Compliance Systems",
+    description:
+      "Proximity detection, gas monitoring, and automated reporting built to match local mining safety regulations.",
+  },
+  {
+    icon: Activity,
+    title: "Data & Analytics Dashboards",
+    description:
+      "Production, throughput, and environmental data unified into reporting your operations and compliance teams already trust.",
+  },
+  {
+    icon: CloudCog,
+    title: "Remote Operations Integration",
+    description:
+      "Connect pit-level systems to remote operations centers with resilient links built for low-connectivity sites.",
+  },
+]
+---
+
+<section id="solutions" class="border-b border-border py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+        Solutions built around your existing site
+      </h2>
+      <p class="mt-4 text-muted-foreground">
+        We don't ask you to rip and replace. Every system we ship is designed
+        to integrate with the equipment and workflows already running on
+        site.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      {
+        solutions.map(({ icon: Icon, title, description }) => (
+          <Card className="rounded-none shadow-none ring-0">
+            <CardHeader>
+              <Icon className="size-6 text-primary" strokeWidth={1.75} />
+              <CardTitle className="mt-3">{title}</CardTitle>
+              <CardDescription>{description}</CardDescription>
+            </CardHeader>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

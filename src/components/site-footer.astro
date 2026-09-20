@@ -1,0 +1,79 @@
+---
+const year = new Date().getFullYear()
+
+const columns = [
+  {
+    title: "Solutions",
+    links: [
+      { label: "Equipment Monitoring", href: "#solutions" },
+      { label: "Predictive Maintenance", href: "#solutions" },
+      { label: "Fleet Management", href: "#solutions" },
+      { label: "Safety & Compliance", href: "#solutions" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Process", href: "#process" },
+      { label: "Testimonials", href: "#testimonials" },
+      { label: "FAQ", href: "#faq" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+]
+---
+
+<footer class="py-16">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="flex flex-col gap-3 lg:col-span-2">
+        <a
+          href="#top"
+          class="font-heading text-lg font-bold tracking-widest uppercase"
+        >
+          Mining<span class="text-primary">SMT</span>
+        </a>
+        <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">
+          We adapt proven technology into rugged, field-ready systems for
+          mining operations — deployed without disrupting the equipment you
+          already run.
+        </p>
+        <a
+          href="mailto:hello@miningsmt.com"
+          class="text-sm font-semibold text-foreground hover:text-primary"
+        >
+          hello@miningsmt.com
+        </a>
+      </div>
+
+      {
+        columns.map((col) => (
+          <div class="flex flex-col gap-3">
+            <h3 class="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+              {col.title}
+            </h3>
+            <ul class="flex flex-col gap-2">
+              {col.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-sm text-foreground/80 hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row"
+    >
+      <p>&copy; {year} MiningSMT. All rights reserved.</p>
+      <p>miningsmt.com</p>
+    </div>
+  </div>
+</footer>
